@@ -20,3 +20,11 @@ test('should return WORLD from file', () => {
     expect(envFile('HELLO')).toBe('WORLD');
     delete process.env.HELLO_FILE;
 });
+
+test('should override with file if provided', () => {
+    process.env.HELLO = 'FOOBAR';
+    process.env.HELLO_FILE = path.resolve(__dirname, 'env/hello');
+    expect(envFile('HELLO')).toBe('WORLD');
+    delete process.env.HELLO;
+    delete process.env.HELLO_FILE;
+});
