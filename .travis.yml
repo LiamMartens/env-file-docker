@@ -2,6 +2,4 @@ language: node_js
 node_js:
   - 8
   - 6
-  - 5
-  - 4
 after_script: node --harmony_proxies node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
