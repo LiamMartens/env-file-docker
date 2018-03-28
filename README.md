@@ -5,6 +5,17 @@
 This is a utility package to extract environment variables in `Node.js`, taking into account the possibility for `ENV_FILE` type variables as is used a lot in `Docker` containers.
 
 ## Usage
-```
+```javascript
+const envFile = require('env-file-docker');
 
+console.log(envFile('HELLO', 'default'));
+// output 'default'
+
+process.env.HELLO_FILE = '/some/file';
+console.log(envFile('HELLO', 'default'));
+// output is the content of '/some/file'
+
+process.env.HELLO = 'world';
+console.log(envFile('HELLO', 'default'));
+// output 'world'
 ```
