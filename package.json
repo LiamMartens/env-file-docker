@@ -1,6 +1,6 @@
 {
     "name": "env-file-docker",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Utility to get node.js environment variable or environment variable file. To support the Docker VAR / VAR_FILE definition",
     "main": "lib/util.js",
     "scripts": {
@@ -14,6 +14,11 @@
         "config",
         "file"
     ],
+    "homepage": "https://github.com/LiamMartens/env-file-docker",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/LiamMartens/env-file-docker.git"
+    },
     "author": "Liam Martens <liam@freighter.studio>",
     "license": "ISC",
     "devDependencies": {
