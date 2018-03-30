@@ -28,3 +28,12 @@ test('should override with file if provided', () => {
     delete process.env.HELLO;
     delete process.env.HELLO_FILE;
 });
+
+test('should not override with file if provided', () => {
+    envFile.setPreferType(envFile.PreferTypes.ENV);
+    process.env.HELLO = 'FOOBAR';
+    process.env.HELLO_FILE = path.resolve(__dirname, 'env/hello');
+    expect(envFile('HELLO')).toBe('FOOBAR');
+    delete process.env.HELLO;
+    delete process.env.HELLO_FILE;
+});

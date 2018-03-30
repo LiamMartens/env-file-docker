@@ -1,6 +1,6 @@
 {
     "name": "env-file-docker",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Utility to get node.js environment variable or environment variable file. To support the Docker VAR / VAR_FILE definition",
     "main": "lib/util.js",
     "scripts": {
