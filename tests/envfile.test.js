@@ -37,3 +37,10 @@ test('should not override with file if provided', () => {
     delete process.env.HELLO;
     delete process.env.HELLO_FILE;
 });
+
+test('should still load file if no env as is', () => {
+    envFile.setPreferType(envFile.PreferTypes.ENV);
+    process.env.HELLO_FILE = path.resolve(__dirname, 'env/hello');
+    expect(envFile('HELLO')).toBe('WORLD');
+    delete process.env.HELLO_FILE;
+});
