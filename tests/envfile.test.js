@@ -44,3 +44,8 @@ test('should still load file if no env as is', () => {
     expect(envFile('HELLO')).toBe('WORLD');
     delete process.env.HELLO_FILE;
 });
+
+test('should fall back to default', () => {
+    envFile.setPreferType(envFile.PreferTypes.ENV);
+    expect(envFile('HELLO', 'default')).toBe('default');
+});
